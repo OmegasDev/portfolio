@@ -1,6 +1,6 @@
 import React from 'react';
 import { GlassCard } from '../components/GlassCard';
-import { ExternalLink, Github, Zap, Bot, Sparkles } from 'lucide-react';
+import { ExternalLink, Github, Zap, Bot, Sparkles, Globe, Book, Star } from 'lucide-react';
 
 export const Projects: React.FC = () => {
   const projects = [
@@ -10,14 +10,16 @@ export const Projects: React.FC = () => {
       description: 'Building SaaS tools, AI agents, and automation platforms for global businesses. A comprehensive ecosystem of AI-powered solutions designed to streamline operations and enhance productivity.',
       features: [
         'AI-powered automation workflows',
-        'Scalable SaaS infrastructure',
-        'Global business solutions',
-        'Enterprise-grade security'
+        'SaaS infrastructure',
+        'Enterprise-grade security',
+        'Business process optimization'
       ],
       icon: Zap,
       gradient: 'from-primary-500 to-primary-600',
       status: 'Active Development',
-      tech: ['React', 'Node.js', 'AI APIs', 'Docker']
+      tech: ['React', 'Node.js', 'AI APIs', 'Docker'],
+      liveUrl: 'https://dayloop.netlify.app/',
+      githubUrl: 'https://github.com/OmegasDev/dayloop'
     },
     {
       title: 'MoonWay',
@@ -32,22 +34,77 @@ export const Projects: React.FC = () => {
       icon: Bot,
       gradient: 'from-secondary-500 to-secondary-600',
       status: 'Beta Testing',
-      tech: ['OpenRouter', 'LLMs', 'n8n', 'React']
+      tech: ['React Native', 'OpenRouter', 'LLMs'],
+      liveUrl: 'https://moonway.netlify.app/',
+      githubUrl: 'https://github.com/OmegasDev'
     },
     {
-      title: 'Custom AI Agents & Automations',
-      subtitle: 'Bespoke Solutions',
-      description: 'SaaS tools & no-code AI automation solutions for small businesses, creators, and early startups. Tailored automation workflows that scale with business needs.',
+      title: 'ZiPay',
+      subtitle: 'Fintech Payment Platform',
+      description: 'Fintech platform for seamless money transfers from Africa to global destinations with secure, fast, and reliable transactions.',
       features: [
-        'No-code automation setup',
-        'Custom AI agent development',
-        'Business process optimization',
-        'Scalable workflow design'
+        'Cross-border payments',
+        'Stripe integration',
+        'Instant money transfer',
+        'Secure fintech infrastructure'
+      ],
+      icon: Globe,
+      gradient: 'from-neon-400 to-neon-600',
+      status: 'Live',
+      tech: ['Next.js', 'Stripe', 'Node.js'],
+      liveUrl: 'http://zipay-app.netlify.app/',
+      githubUrl: 'https://github.com/OmegasDev/zipay'
+    },
+    {
+      title: 'Favourite Design',
+      subtitle: 'Graphic Designer Portfolio',
+      description: 'Portfolio website for a graphic designer showcasing creative works, design services and visual storytelling.',
+      features: [
+        'Showcase creative designs',
+        'Smooth user experience',
+        'Fully responsive',
+        'Creative portfolio layouts'
       ],
       icon: Sparkles,
-      gradient: 'from-accent-500 to-accent-600',
-      status: 'Client Services',
-      tech: ['Zapier', 'Make', 'n8n', 'AI APIs']
+      gradient: 'from-purple-400 to-purple-600',
+      status: 'Live',
+      tech: ['React', 'Tailwind', 'Framer Motion'],
+      liveUrl: 'http://favourite-designs.netlify.app/',
+      githubUrl: 'https://github.com/OmegasDev/favourite_designs'
+    },
+    {
+      title: 'Nova Learn',
+      subtitle: 'Book Display Platform',
+      description: 'Simple and elegant book display platform for discovering and exploring literature.',
+      features: [
+        'Book discovery',
+        'Simple UI',
+        'API Integration',
+        'Seamless browsing'
+      ],
+      icon: Book,
+      gradient: 'from-indigo-400 to-indigo-600',
+      status: 'Completed',
+      tech: ['React', 'API Integration', 'CSS3'],
+      liveUrl: 'http://nova-learn.netlify.app/',
+      githubUrl: 'https://github.com/OmegasDev/Novalearn'
+    },
+    {
+      title: 'Portfolio V1',
+      subtitle: 'First Personal Portfolio',
+      description: 'Previous iteration of personal portfolio showcasing early projects and development journey.',
+      features: [
+        'Showcase projects',
+        'HTML/CSS/JS stack',
+        'Fully responsive',
+        'Simple clean layout'
+      ],
+      icon: Star,
+      gradient: 'from-orange-400 to-orange-600',
+      status: 'Completed',
+      tech: ['HTML', 'CSS', 'JavaScript'],
+      liveUrl: 'http://my-portfolio-6b7n.vercel.app/',
+      githubUrl: 'https://github.com/OmegasDev/my-portfolio'
     }
   ];
 
@@ -134,7 +191,7 @@ export const Projects: React.FC = () => {
                         <div className="flex justify-between items-center">
                           <span className="text-gray-400 text-sm">Progress</span>
                           <span className="text-primary-400 font-medium">
-                            {project.status === 'Active Development' ? '75%' :
+                            {project.status === 'Active Development' ? '80%' :
                              project.status === 'Beta Testing' ? '90%' : '100%'}
                           </span>
                         </div>
@@ -149,14 +206,14 @@ export const Projects: React.FC = () => {
                     </div>
 
                     <div className="space-y-3">
-                      <button className="w-full bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white py-3 px-4 rounded-lg font-medium transition-all duration-300 flex items-center justify-center space-x-2 hover:shadow-lg hover:shadow-primary-500/30">
+                      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="w-full bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white py-3 px-4 rounded-lg font-medium transition-all duration-300 flex items-center justify-center space-x-2 hover:shadow-lg hover:shadow-primary-500/30">
                         <ExternalLink className="h-4 w-4" />
-                        <span>Learn More</span>
-                      </button>
-                      <button className="w-full border border-gray-600 hover:bg-gray-700/50 text-gray-300 hover:text-white py-3 px-4 rounded-lg font-medium transition-all duration-300 flex items-center justify-center space-x-2">
+                        <span>Visit Site</span>
+                      </a>
+                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="w-full border border-gray-600 hover:bg-gray-700/50 text-gray-300 hover:text-white py-3 px-4 rounded-lg font-medium transition-all duration-300 flex items-center justify-center space-x-2">
                         <Github className="h-4 w-4" />
                         <span>View Code</span>
-                      </button>
+                      </a>
                     </div>
                   </div>
                 </div>

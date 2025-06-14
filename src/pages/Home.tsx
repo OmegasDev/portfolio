@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Download, ExternalLink, Code, Zap, Users, Target, TrendingUp, Award, Sparkles, Rocket, Globe } from 'lucide-react';
+import { ArrowRight, Download, ExternalLink, Code, Zap, Users, Github, Target, TrendingUp, Award, Sparkles, Rocket, Globe } from 'lucide-react';
 import { TypewriterText } from '../components/TypewriterText';
 import { GlassCard } from '../components/GlassCard';
 import { ProjectCard } from '../components/ProjectCard';
+
 
 export const Home: React.FC = () => {
   const rotatingWords = [
@@ -19,66 +20,72 @@ export const Home: React.FC = () => {
       title: 'Dayloop',
       description: 'AI startup studio building SaaS tools, AI agents, and automation platforms for global businesses.',
       progress: 80,
-      status: 'In Development' as const,
+      status: 'In Development',
       technologies: ['React', 'Node.js', 'AI APIs', 'Docker'],
-      liveUrl: 'https://dayloop.vercel.app',
-      githubUrl: 'https://github.com/omegasunday/dayloop',
+      liveUrl: 'http://dayloop.netlify.app/',  // Updated live link
+      githubUrl: 'https://github.com/OmegasDev/dayloop',  // Updated github link
       gradient: 'from-electric-400 to-electric-600',
-      backgroundImage: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800'
+      backgroundImage: '/dayloop.png'  // Local asset now
     },
+    
     {
       title: 'MoonWay',
       description: 'AI-powered social media profile optimizer helping creators optimize their bios and audience reach.',
       progress: 65,
-      status: 'In Development' as const,
+      status: 'In Development',
       technologies: ['React Native', 'OpenRouter', 'LLMs'],
       gradient: 'from-accent-400 to-accent-600',
-      backgroundImage: 'https://images.pexels.com/photos/1181677/pexels-photo-1181677.jpeg?auto=compress&cs=tinysrgb&w=800'
-    },
+      backgroundImage: '/moonway.jpg'
+    }
+    ,
     {
       title: 'ziPay',
       description: 'Fintech platform for seamless money transfers from Africa to global destinations.',
       progress: 100,
-      status: 'Live' as const,
+      status: 'Live',
       technologies: ['Next.js', 'Stripe', 'Node.js'],
-      liveUrl: 'https://zipay-fintech.vercel.app',
-      githubUrl: 'https://github.com/omegasunday/zipay',
+      liveUrl: 'http://zipay-app.netlify.app/',
+      githubUrl: 'https://github.com/OmegasDev/zipay',
       gradient: 'from-neon-400 to-neon-600',
-      backgroundImage: 'https://images.pexels.com/photos/259027/pexels-photo-259027.jpeg?auto=compress&cs=tinysrgb&w=800'
-    },
+      backgroundImage: '/zipay.png'
+    }
+    ,
     {
       title: 'Favourite Design',
       description: 'Portfolio website for a graphic designer showcasing creative works and design services.',
       progress: 100,
-      status: 'Live' as const,
+      status: 'Live',
       technologies: ['React', 'Tailwind', 'Framer Motion'],
-      liveUrl: 'https://favourite-design.vercel.app',
-      githubUrl: 'https://github.com/omegasunday/favourite-design',
+      liveUrl: 'http://favourite-designs.netlify.app/',
+      githubUrl: 'https://github.com/OmegasDev/favourite_designs',
       gradient: 'from-purple-400 to-purple-600',
-      backgroundImage: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800'
-    },
+      backgroundImage: '/favourite.png'
+    }
+    ,
     {
       title: 'Nova Learn',
       description: 'Simple and elegant book display platform for discovering and exploring literature.',
       progress: 100,
-      status: 'Completed' as const,
+      status: 'Completed',
       technologies: ['React', 'API Integration', 'CSS3'],
-      liveUrl: 'https://nova-learn.vercel.app',
-      githubUrl: 'https://github.com/omegasunday/nova-learn',
+      liveUrl: 'http://nova-learn.netlify.app/',
+      githubUrl: 'https://github.com/OmegasDev/Novalearn',
       gradient: 'from-indigo-400 to-indigo-600',
       backgroundImage: 'https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=800'
-    },
+    }
+    ,
     {
       title: 'Portfolio V1',
       description: 'Previous iteration of personal portfolio showcasing early projects and development journey.',
       progress: 100,
-      status: 'Completed' as const,
+      status: 'Completed',
       technologies: ['HTML', 'CSS', 'JavaScript'],
-      liveUrl: 'https://omegasunday-portfolio-v1.vercel.app',
-      githubUrl: 'https://github.com/omegasunday/portfolio-v1',
+      liveUrl: 'http://my-portfolio-6b7n.vercel.app/',
+      githubUrl: 'https://github.com/OmegasDev/my-portfolio',
       gradient: 'from-orange-400 to-orange-600',
       backgroundImage: 'https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&w=800'
     }
+    
   ];
 
   const stats = [
@@ -91,144 +98,135 @@ export const Home: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden">
-        {/* Enhanced Animated Background Elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-electric-500/20 rounded-full blur-3xl animate-float"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-neon-500/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-accent-500/15 rounded-full blur-3xl animate-pulse"></div>
-          
-          {/* Glowing Orbs */}
-          <div className="absolute top-20 right-20 w-32 h-32 bg-gradient-to-r from-electric-400 to-neon-400 rounded-full blur-2xl opacity-30 animate-bounce-subtle"></div>
-          <div className="absolute bottom-20 left-20 w-40 h-40 bg-gradient-to-r from-accent-400 to-purple-400 rounded-full blur-2xl opacity-25 animate-float" style={{ animationDelay: '3s' }}></div>
-        </div>
+<section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden">
+  {/* Enhanced Animated Background Elements */}
+  <div className="absolute inset-0 overflow-hidden">
+    <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-electric-500/20 rounded-full blur-3xl animate-float"></div>
+    <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-neon-500/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-accent-500/15 rounded-full blur-3xl animate-pulse"></div>
+    <div className="absolute top-20 right-20 w-32 h-32 bg-gradient-to-r from-electric-400 to-neon-400 rounded-full blur-2xl opacity-30 animate-bounce-subtle"></div>
+    <div className="absolute bottom-20 left-20 w-40 h-40 bg-gradient-to-r from-accent-400 to-purple-400 rounded-full blur-2xl opacity-25 animate-float" style={{ animationDelay: '3s' }}></div>
+  </div>
 
-        {/* Rotating Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-electric-400/20 rounded-full animate-rotate-slow"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-neon-400/20 rounded-full animate-rotate-slow" style={{ animationDirection: 'reverse', animationDuration: '30s' }}></div>
-        </div>
+  <div className="absolute inset-0 opacity-5">
+    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-electric-400/20 rounded-full animate-rotate-slow"></div>
+    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-neon-400/20 rounded-full animate-rotate-slow" style={{ animationDirection: 'reverse', animationDuration: '30s' }}></div>
+  </div>
 
-        <div className="relative z-10 max-w-5xl mx-auto text-center">
-          {/* Enhanced Profile Image */}
-          <div className="mb-8 animate-fade-in">
-            <div className="w-44 h-44 mx-auto mb-6 relative">
-              <div className="w-full h-full rounded-full bg-gradient-to-r from-electric-400 via-neon-400 to-accent-400 p-1 animate-glow-pulse">
-                <div className="w-full h-full rounded-full bg-slate-800 flex items-center justify-center overflow-hidden relative">
-                  <img
-                    src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400"
-                    alt="Emmanuel I. Sunday (Omega)"
-                    className="w-full h-full rounded-full object-cover"
-                  />
-                  {/* Shimmer Effect */}
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/10 to-transparent animate-shimmer"></div>
-                </div>
-              </div>
-              {/* Floating Icons */}
-              <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-r from-electric-400 to-electric-600 rounded-full flex items-center justify-center animate-bounce-subtle">
-                <Sparkles className="h-4 w-4 text-white" />
-              </div>
-            </div>
-          </div>
+  <div className="relative z-10 max-w-5xl mx-auto text-center">
+    <div className="mb-8 animate-fade-in">
+      <div className="w-44 h-44 mx-auto mb-6 relative">
+        <div className="w-full h-full rounded-full bg-gradient-to-r from-electric-400 via-neon-400 to-accent-400 p-1 animate-glow-pulse">
+          <div className="w-full h-full rounded-full bg-slate-800 flex items-center justify-center overflow-hidden relative">
+          <img
+  src="/my-profile.jpg"
+  alt="Emmanuel I. Sunday (Omega)"
+  className="w-full h-full rounded-full object-cover"
+/>
 
-          {/* Enhanced Main Headline */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-slide-up">
-            <span className="bg-gradient-to-r from-white via-electric-200 to-neon-200 bg-clip-text text-transparent">
-              Emmanuel I. Sunday
-            </span>
-            <br />
-            <span className="text-2xl md:text-3xl lg:text-4xl font-normal text-gray-300 mt-4 block">
-              Building Global AI SaaS & Automation Ecosystems
-            </span>
-          </h1>
-
-          {/* Enhanced Company Info */}
-          <div className="mb-8 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-            <p className="text-xl md:text-2xl text-gray-400 mb-4">
-              Founder of <span className="text-electric-400 font-semibold bg-electric-400/10 px-2 py-1 rounded-lg">Dayloop</span> | 
-              Creator of <span className="text-neon-400 font-semibold bg-neon-400/10 px-2 py-1 rounded-lg">MoonWay</span>
-            </p>
-            <div className="text-lg md:text-xl text-gray-500 h-8 flex items-center justify-center">
-              <TypewriterText 
-                words={rotatingWords} 
-                className="text-electric-300 font-medium"
-              />
-            </div>
-          </div>
-
-          {/* Enhanced CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up" style={{ animationDelay: '0.4s' }}>
-            <Link
-              to="/projects"
-              className="group bg-gradient-to-r from-electric-500 to-electric-600 hover:from-electric-600 hover:to-electric-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 flex items-center space-x-2 hover:shadow-2xl hover:shadow-electric-500/40 hover:scale-105 relative overflow-hidden"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-shimmer"></div>
-              <span className="relative z-10">View My Work</span>
-              <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300 relative z-10" />
-            </Link>
-            <Link
-              to="/contact"
-              className="group border-2 border-neon-500 hover:bg-neon-500 text-neon-400 hover:text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 flex items-center space-x-2 hover:shadow-2xl hover:shadow-neon-500/40 relative overflow-hidden"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-neon-400/10 to-transparent animate-shimmer"></div>
-              <span className="relative z-10">Work With Me</span>
-              <ExternalLink className="h-5 w-5 group-hover:rotate-12 transition-transform duration-300 relative z-10" />
-            </Link>
+            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/10 to-transparent animate-shimmer"></div>
           </div>
         </div>
-      </section>
+        <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-r from-electric-400 to-electric-600 rounded-full flex items-center justify-center animate-bounce-subtle">
+          <Sparkles className="h-4 w-4 text-white" />
+        </div>
+      </div>
+    </div>
+
+    <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-slide-up">
+      <span className="bg-gradient-to-r from-white via-electric-200 to-neon-200 bg-clip-text text-transparent">
+        Emmanuel I. Sunday
+      </span>
+      <br />
+      <span className="text-xl md:text-2xl lg:text-3xl font-normal text-gray-300 mt-4 block">
+        Building Global AI SaaS & Automation Ecosystems
+      </span>
+    </h1>
+
+    <div className="mb-8 animate-slide-up" style={{ animationDelay: '0.2s' }}>
+      <p className="text-sm md:text-xl text-gray-400 mb-4 whitespace-nowrap">
+        Founder of <span className="text-electric-400 font-semibold bg-electric-400/10 px-2 py-1 rounded-lg">Dayloop</span> | 
+        Creator of <span className="text-neon-400 font-semibold bg-neon-400/10 px-2 py-1 rounded-lg">MoonWay</span>
+      </p>
+      <div className="text-lg md:text-xl text-gray-500 h-8 flex items-center justify-center">
+        <TypewriterText 
+          words={rotatingWords} 
+          className="text-electric-300 font-medium"
+        />
+      </div>
+    </div>
+
+    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up" style={{ animationDelay: '0.4s' }}>
+      <Link
+        to="/projects"
+        className="group bg-gradient-to-r from-electric-500 to-electric-600 hover:from-electric-600 hover:to-electric-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 flex items-center space-x-2 hover:shadow-2xl hover:shadow-electric-500/40 hover:scale-105 relative overflow-hidden"
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-shimmer"></div>
+        <span className="relative z-10">View My Work</span>
+        <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300 relative z-10" />
+      </Link>
+      <Link
+        to="/contact"
+        className="group border-2 border-neon-500 hover:bg-neon-500 text-neon-400 hover:text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 flex items-center space-x-2 hover:shadow-2xl hover:shadow-neon-500/40 relative overflow-hidden"
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-neon-400/10 to-transparent animate-shimmer"></div>
+        <span className="relative z-10">Work With Me</span>
+        <ExternalLink className="h-5 w-5 group-hover:rotate-12 transition-transform duration-300 relative z-10" />
+      </Link>
+    </div>
+  </div>
+</section>
+
 
       {/* Featured Projects Section - Moved Up */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-electric-500/5 to-transparent"></div>
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-16 animate-fade-in">
-            <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-electric-500/20 to-neon-500/20 backdrop-blur-sm border border-electric-500/30 rounded-full px-6 py-2 mb-6">
-              <Rocket className="h-5 w-5 text-electric-400" />
-              <span className="text-electric-300 font-medium">Featured Projects</span>
-            </div>
-            <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-electric-400 via-neon-400 to-accent-400 bg-clip-text text-transparent">
-              Building the Future
-            </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              Scalable AI ecosystems and automation solutions that empower businesses worldwide
-            </p>
-          </div>
+  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-electric-500/5 to-transparent"></div>
+  <div className="max-w-7xl mx-auto relative z-10">
+    <div className="text-center mb-16 animate-fade-in">
+      <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-electric-500/20 to-neon-500/20 backdrop-blur-sm border border-electric-500/30 rounded-full px-6 py-2 mb-6">
+        <Rocket className="h-5 w-5 text-electric-400" />
+        <span className="text-electric-300 font-medium">Featured Projects</span>
+      </div>
+      <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-electric-400 via-neon-400 to-accent-400 bg-clip-text text-transparent">
+        Building the Future
+      </h2>
+      <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+        Scalable AI ecosystems and automation solutions that empower businesses worldwide
+      </p>
+    </div>
 
-          {/* Enhanced Mobile Layout: Staggered Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {projects.map((project, index) => (
-              <div 
-                key={project.title}
-                className={`
-                  ${index === 0 ? 'md:col-span-2 lg:col-span-1' : ''}
-                  ${index === 1 ? 'md:col-start-1 lg:col-start-2' : ''}
-                  ${index === 2 ? 'md:col-start-2 lg:col-start-3' : ''}
-                  ${index === 3 ? 'md:col-span-2 lg:col-span-1 lg:col-start-1' : ''}
-                  ${index === 4 ? 'md:col-start-1 lg:col-start-2' : ''}
-                  ${index === 5 ? 'md:col-start-2 lg:col-start-3' : ''}
-                `}
-              >
-                <ProjectCard
-                  {...project}
-                  delay={index * 0.1}
-                />
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center mt-12 animate-fade-in" style={{ animationDelay: '0.8s' }}>
-            <Link
-              to="/projects"
-              className="inline-flex items-center space-x-2 bg-gradient-to-r from-neon-500 to-neon-600 hover:from-neon-600 hover:to-neon-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-neon-500/40 relative overflow-hidden"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-shimmer"></div>
-              <span className="relative z-10">View All Projects</span>
-              <ArrowRight className="h-4 w-4 relative z-10" />
-            </Link>
-          </div>
+    {/* Enhanced Mobile Layout: Staggered Grid */}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+      {projects.map((project, index) => (
+        <div 
+          key={project.title}
+          className={`
+            ${index === 0 ? 'md:col-span-2 lg:col-span-1' : ''}
+            ${index === 1 ? 'md:col-start-1 lg:col-start-2' : ''}
+            ${index === 2 ? 'md:col-start-2 lg:col-start-3' : ''}
+            ${index === 3 ? 'md:col-span-2 lg:col-span-1 lg:col-start-1' : ''}
+            ${index === 4 ? 'md:col-start-1 lg:col-start-2' : ''}
+            ${index === 5 ? 'md:col-start-2 lg:col-start-3' : ''}
+          `}
+        >
+          <ProjectCard {...project} delay={index * 0.1} />
         </div>
-      </section>
+      ))}
+    </div>
+
+    <div className="text-center mt-12 animate-fade-in" style={{ animationDelay: '0.8s' }}>
+      <Link
+        to="/projects"
+        className="inline-flex items-center space-x-2 bg-gradient-to-r from-neon-500 to-neon-600 hover:from-neon-600 hover:to-neon-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-neon-500/40 relative overflow-hidden"
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-shimmer"></div>
+        <span className="relative z-10">View All Projects</span>
+        <ArrowRight className="h-4 w-4 relative z-10" />
+      </Link>
+    </div>
+  </div>
+</section>
+
 
       {/* Stats Section - Moved Below Projects */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 relative">
@@ -334,6 +332,27 @@ export const Home: React.FC = () => {
                   </div>
                 </div>
               </GlassCard>
+
+               {/* NEW: Beyond Work Card */}
+        <GlassCard className="relative mt-5 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-accent-500/10 via-transparent to-purple-500/10"></div>
+          <div className="relative z-10 space-y-4">
+            <h3 className="text-xl font-bold text-white">Beyond Work</h3>
+            <p className="text-gray-400">
+              When not building the next big thing, Emmanuel enjoys continuous learning through reading and writing, staying active with football and table tennis, and exploring new technologies that can shape the future of business automation.
+            </p>
+            <div className="flex flex-wrap gap-3">
+  {["Reading", "Writing", "Football", "Table Tennis", "Tech Innovation", "Continuous Learning"].map((hobby) => (
+    <span key={hobby} className="bg-white/10 text-white text-sm font-medium px-4 py-2 rounded-full border border-white/20 backdrop-blur-md shadow-sm">
+      {hobby}
+    </span>
+  ))}
+</div>
+
+          </div>
+        </GlassCard>
+
+
             </div>
           </div>
         </div>
@@ -365,7 +384,7 @@ export const Home: React.FC = () => {
                   <ArrowRight className="h-4 w-4 relative z-10" />
                 </Link>
                 <a
-                  href="https://github.com/omegasunday"
+                  href="https://github.com/OmegasDev/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center space-x-2 border-2 border-neon-500 hover:bg-neon-500 text-neon-400 hover:text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 relative overflow-hidden"

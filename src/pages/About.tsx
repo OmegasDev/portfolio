@@ -22,7 +22,7 @@ export const About: React.FC = () => {
             <div className="w-full h-full rounded-2xl bg-gradient-to-r from-primary-500 to-secondary-500 p-1">
               <div className="w-full h-full rounded-2xl bg-gray-800 flex items-center justify-center overflow-hidden">
                 <img
-                  src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600"
+                  src="/my-profile.jpg"
                   alt="Emmanuel I. Sunday (Omega)"
                   className="w-full h-full object-cover rounded-2xl"
                 />
