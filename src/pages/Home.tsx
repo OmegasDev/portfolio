@@ -278,7 +278,7 @@ export const Home: React.FC = () => {
                 Building the Future of AI & SaaS
               </h2>
               <p className="text-gray-300 leading-relaxed mb-6">
-                Emmanuel I. Sunday (Omega) is a startup founder, product architect, and AI automation specialist. 
+                Emmanuel I. Sunday  is a startup founder, product architect, and AI automation specialist. 
                 Currently building Dayloop, an AI startup company developing SaaS platforms, no-code automation 
                 solutions, and scalable AI-powered products.
               </p>

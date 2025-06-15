@@ -29,7 +29,7 @@ export const About: React.FC = () => {
               </div>
             </div>
           </div>
-          <h2 className="text-2xl font-bold mt-6 text-white">Emmanuel I. Sunday (Omega)</h2>
+          <h2 className="text-2xl font-bold mt-6 text-white">Emmanuel I. Sunday </h2>
           <p className="text-primary-400 font-medium">AI Founder & SaaS Builder</p>
         </div>
 
